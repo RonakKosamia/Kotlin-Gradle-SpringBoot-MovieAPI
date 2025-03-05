@@ -58,6 +58,20 @@ curl -X POST http://localhost:8080/movies \
      -d '{"title": "The Dark Knight", "rating": 9.1, "releaseYear": 2008}'
 ```
 
+### **📍 Usefull maven commands**  
+```sh
+mvn clean install
+mvn clean package
+mvn compile
+mvn dependency:tree
+mvn spring-boot:run
+
+Manually running maven : 
+mvn exec:java -Dexec.mainClass="com.example.exampleapi.ExampleMainApiApplication"
+mvn spring-boot:run -Dspring-boot.run.mainClass=com.api.movies_api.MoviesApiApplicationKt
+
+
+```
 ---
 
 ## **🎯 Roadmap**  
@@ -75,3 +89,45 @@ Feel free to **fork** this repo, open issues, and submit PRs!
 ## **📜 License**  
 This project is **open-source** and available under the **MIT License**.  
 ```
+
+
+ISSUEs you might run into with standard Spring Initializer project(s) : 
+
+1. You can use a local MongoDB instance instead of MongoDB Atlas. To do this, 
+
+update your application.properties: ```sh spring.data.mongodb.uri=mongodb://localhost:27017/moviesDB ```
+verify connection with mongoDb :```sh mongosh "mongodb://localhost:27017/moviesDB" ```
+
+2.  Maven Wrapper not recognized. 
+
+If ./mvnw is missing, your project might not be properly initialized.
+run:
+```sh 
+mvn -N io.takari:maven:wrapper 
+chmod +x mvnw
+```
+3. if mvn command is missing , Fixing mvn: command not found
+```sh 
+brew install maven
+mvn -version
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+4. sometimes spring initilizer doesnt provide pom.xml too. so you will need add it manually and modify it according to your app. 
+And make sure you have declared your main class in pom.xml
+```sh 
+        <configuration>
+                <mainClass>com.example.exampleapi.ExampleMainApiApplication</mainClass>
+OR if using Kotlin : 
+                <mainClass>com.api.movies_api.MoviesApiApplicationKt</mainClass>
+       </configuration>
+
+```
+
+5. Port Conflict
+```sh 
+lsof -i :8080
+kill -9 <PID>
+```
+
+
