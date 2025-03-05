@@ -25,7 +25,7 @@ This project follows **MVVM + Clean Architecture**, leveraging **Coroutines & Fl
 ```sh
 git clone https://github.com/YOUR_USERNAME/Kotlin-Gradle-SpringBoot-MovieAPI.git
 cd Kotlin-Gradle-SpringBoot-MovieAPI
-
+```
 
 ### **📌 Running & Testing the API**  
 
