@@ -29,7 +29,6 @@ cd Kotlin-Gradle-SpringBoot-MovieAPI
 
 ### **📌 Running & Testing the API**  
 
-```md
 ## **2️⃣ Run the Application**  
 Ensure **MongoDB** is running locally:  
 
