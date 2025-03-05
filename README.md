@@ -88,10 +88,10 @@ Feel free to **fork** this repo, open issues, and submit PRs!
 
 ## **📜 License**  
 This project is **open-source** and available under the **MIT License**.  
-```
 
+---
 
-ISSUEs you might run into with standard Spring Initializer project(s) : 
+## **Issues you might run into with standard Spring Initializer project(s) : **
 
 1. You can use a local MongoDB instance instead of MongoDB Atlas. To do this, 
 
